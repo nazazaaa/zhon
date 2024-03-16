@@ -1,0 +1,108 @@
+* {
+	margin: 0;
+	font-family: "Chelsea Market", system-ui;
+}
+
+body {
+    background-color: #888;
+}
+
+.container {
+	display: block;
+	width: 140vh;
+    height: 100vh;
+    background-image: url('img/home-back.jpg');
+	background-size: cover;
+	background-position: center;
+	margin: auto;
+}
+
+.navbar-outer {
+/*	background-color: white;*/
+	display: flex;
+/*	justify-content: center;*/
+	align-items: center;
+}
+
+.navbar {
+	width: 50%;
+	height: 8vh;
+	font-size: 3vh;
+	background-image: linear-gradient(to bottom,#2593fd,#0b62ef);
+	border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+/*	margin: auto;*/
+	margin-left: 50%; 
+ 	transform: translateX(-50%);
+	position: relative;
+/*	padding: 0;*/
+	display: flex;
+}
+
+.navbar ul {
+	padding:0;
+	width: 100%;
+	height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navber ul li a img {
+	width: 3vh; height: 3vh;
+}
+
+.navbar-outer a {
+    color: #fff;
+    opacity: 60%;
+    text-decoration: none;
+}
+
+.navbar-outer a:hover {
+	opacity: 100%;
+	cursor: pointer;
+}
+
+.exit-btn {	
+	position: fixed;
+	font-size: 3vh;
+	margin: 130vh;
+	padding: 0;
+	background-color: transparent;
+	border: 0;
+	color: white;
+}
+
+.btn {
+	width: 30%; 
+	height: 10%;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 62vh;
+}
+
+.btn a {
+	position: absolute;
+	font-size: 8vh;
+/*	z-index: 2;*/
+}
+
+
+.arrow { 
+	position: relative;
+	width: 100%; 
+	height: 100%;
+	background-color:#fff;
+	clip-path: polygon(83% 0, 95% 27%, 85% 24%, 69% 100%, 7% 79%, 62% 17%, 50% 14%); 
+	-webkit-filter: drop-shadow(10px 5px 5px rgba(0,0,0,0.5));
+    filter: drop-shadow(10px 5px 5px rgba(0,0,0,0.5));
+/*	z-index: 1;*/
+}
+
+.btn:hover.btn {
+    margin-top: 61vh;
+	cursor: pointer;
+}
