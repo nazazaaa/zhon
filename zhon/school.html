@@ -2,12 +2,94 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="school.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<title>School</title>
+    <style>
+        .container {
+            background-image: url('img/school-back.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .wall {
+        /*  background-color: green;*/
+        /*  opacity: 30%;*/
+            width: 65vh;
+            height: 81.5vh;
+            margin: auto;   
+        }
+
+        .name-box {
+            height: 20%;
+        /*  background-color: yellow;*/
+            display: flex;
+            align-items: end;
+            justify-content: center;
+        /*  opacity: 30%;*/
+        }
+
+        .name {
+            width: 30.5%;
+            height: 33%;
+            background-image: url(img/name.png);
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3vh;
+            box-shadow: 0 4px 1px rgb(0, 0, 0, 0.25);
+        }
+
+        .name h3 {
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        .doors {
+            height: 80%;
+            display: flex;
+            justify-content: space-evenly;
+        /*  background-color: red;*/
+        /*  opacity: 30%;*/
+        /*  z-index: -100;*/
+        }
+
+        .nav-btn {
+            width: 6vh;
+            height: 6vh;
+            margin-top: 23vh;
+            text-align: center;
+            padding: 0;
+            background-color: #FED9D1;
+            border: 0;
+        }
+
+        .prev {
+            clip-path: polygon(100% 0, 13% 50%, 100% 100%);
+        }
+
+        .next {
+            clip-path: polygon(0 0, 0 100%, 87% 50%);
+        }
+
+        .door {
+            background-color: white;
+            opacity: 0%;
+            width: 28.5vh;
+            height: 47.5vh;
+            clip-path: polygon(0.5% 1%, 100% 0, 94.5% 100%, 2% 100%);
+            margin-top: 4.1vh;
+            border: 0;
+        }
+
+        .door:hover {
+            opacity: 30%;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -15,16 +97,17 @@
             <div class="navbar">
                 <ul>
                     <li><a href="home.html">Logo</a></li>
-                    <li><a href="school.html">School</a></li>
-                    <li><a href="library.html">Library</a></li>
-                    <li><a><img src="img/help (2).png" style="width: 4vh; height: 4vh; padding-top: 1vh;"></a></li>
-                    <li><a><img src="img/settings.png" style="width: 4vh; height: 4vh; padding-top: 1vh;"></a></li>
-                    <li><a id="profileButton" href="profile-main.html">Profile</a></li>
+                    <li><a href="school.html">МЕКТЕП</a></li>
+                    <li><a href="library.html">КІТАПХАНА</a></li>
+                    <li><a onclick="openIns()"><img src="img/help (2).png" style="width: 4vh; height: 4vh; padding-top: 1vh;"></a></li>
+                    <li><a onclick="openSet()"><img src="img/settings.png" style="width: 4vh; height: 4vh; padding-top: 1vh;"></a></li>
+                    <li><a id="profileButton" href="profile-main.html">ПРОФИЛЬ</a></li>
                 </ul>
             </div>
-            <button class="exit-btn"><img src="img/logout.png" alt="Exit" style="width: 6vh; height: 6vh;"></button>
+            <button class="exit-btn">Шығу</button>
         </div>
-        <div class="label"><h2 style="font-weight: 500; color: white;">School</h2></div>
+        
+        <div class="label"><h2 style="font-weight: 500; color: white;">М е к т е п</h2></div>
         <div class="wall">
             <div class="name-box">
                 <div class="name"><h3 style="font-weight: 500;">Math</h3></div>
@@ -39,9 +122,112 @@
                     <!-- <img src="img/next.png" alt="Next" style="width: 5.5vh; height: 5.5vh;"> -->
                 </button>
             </div>
-            
         </div>
-        
     </div>
+
+            <!-- The overlay -->
+        <div id="ins" class="overlay">
+
+            <!-- Overlay content -->
+            <div class="overlay-content">
+                <div class="outer-ins">
+                    <div><a href="javascript:void(0)" class="closebtn" onclick="closeIns()" style="font-family: Chelsea+Market;">&times;</a></div>
+                    <div class="inner-ins">
+                        <h2 style="font-size: 5vh; font-family: Hombre;">? Көмек</h2>
+                        <div class="bubble">
+                            <p style="font-size: 4vh; font-family: Hombre;">Қош келдіңіз!</p>
+                        </div>
+                        <img src="img/girl.jpg" alt="girl" style="width: 17vh; height: 17vh;">
+                        <div class="inst-text-box">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lectus risus, finibus ornare vestibulum et, feugiat quis dui. Vivamus sit amet dolor et magna facilisis rhoncus. 
+                                <br>
+                                Curabitur maximus est sed porta scelerisque. Sed suscipit, arcu volutpat feugiat posuere, eros nisi tristique nibh, mollis vehicula lectus tortor eu purus. 
+                                <br>
+                                Donec ut tortor blandit, sagittis diam eget, suscipit eros. Quisque at magna neque. 
+                                Nulla faucibus mi at nunc mattis placerat. Pellentesque quis augue quis elit tristique auctor. Integer varius est orci, vel egestas felis dictum nec. 
+                                <br>
+                                Phasellus porta ex sit amet turpis finibus, sed vestibulum nisl efficitur. 
+                                <br>
+                                Praesent ultrices diam enim. In ut tellus sed sem placerat sollicitudin. 
+                                <br>
+                                Donec quis mollis dolor. Etiam viverra, arcu cursus porttitor porttitor, diam nunc auctor nisl, quis placerat magna erat et odio. 
+                                <br>
+                                Phasellus feugiat turpis quis mollis lacinia. Sed ac orci et nisi venenatis pharetra ac non arcu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- The overlay -->
+        <div id="set" class="overlay">
+
+            <!-- Overlay content -->
+            <div class="overlay-content">
+                <div class="outer-ins">
+                    <div><a href="javascript:void(0)" class="closebtn" onclick="closeSet()" style="font-family: Chelsea+Market; background-color: #424242;">&times;</a></div>
+                    <div class="inner-ins" style="background-color: #4d4d4d;    border: 1.5vh solid #424242; line-height: 1;">
+                        <h2 style="font-size: 4.5vh; color: white;">Параметрлер</h2>
+
+                        <div class="box sound-box">
+                            <div class="in-box">
+                            <h3>Дыбыс</h3></div>
+                            <div class="in-box-two">
+                                <input class="xdirection" type="range" min="0" max="3" step="0.1" value="1">
+                            </div>
+                        </div>
+                        <div class="box music-box">
+                            <div class="in-box">
+                            <h3>Ән</h3></div>
+                            <div class="in-box-two">
+                                <input class="xdirection" type="range" min="0" max="3" step="0.1" value="1">
+                            </div>
+                        </div>
+                        <div class="box pen-col-box">
+                            <div class="in-box">
+                            <h3>Қалам түсі</h3></div>
+                            <div class="in-box-two">
+                                <div><img src="img/pen-col.png" style="height: 5vh;"></div>
+                            </div>
+                        </div>
+                        <div class="box pen-line-box">
+                            <div class="in-box">
+                            <h3>Қалам қалыңдығы</h3></div>
+                            <div class="in-box-two">
+                                <div><img src="img/pen-line.png" style="height: 5vh;"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+    /* Open */
+    function openIns() {
+        document.getElementById("ins").style.display = "block";
+    }
+
+    /* Close */
+    function closeIns() {
+        document.getElementById("ins").style.display = "none";
+    }
+
+    /* Open */
+    function openSet() {
+        document.getElementById("set").style.display = "block";
+    }
+
+    /* Close */
+    function closeSet() {
+        document.getElementById("set").style.display = "none";
+    }
+    </script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +23,8 @@
             position: absolute;
             font-size: 6vh;
             font-family: Hombre;
+            cursor: pointer;
         }
-
 
         .arrow { 
             position: relative;
@@ -38,13 +38,107 @@
 
         .btn:hover.btn {
             margin-top: 61vh;
-            cursor: pointer;
         }
 
         .container {
             background-image: url('img/home-back.jpg');
             background-size: cover;
             background-position: center;
+        }
+
+        .welcome {
+            margin: 7vh 10vh;
+            width: 35vh;
+            height: 43vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+        }
+
+        .welcome h2 {
+            color: white;
+            font-size: 5vh;
+            text-shadow: 0 3px 1px rgb(0, 0, 0, 0.4);
+        }
+
+        .welcome-pfp {
+            height: 15vh;
+        }
+
+        .pfp {
+            width: 13vh;
+            height: 13vh;
+            background-color: #E4624E;
+            border-radius: 50%;
+            margin: auto;
+            z-index: -1;
+            border: 0.8vh white solid;
+            box-shadow: 0 5px 1px rgb(0, 0, 0, 0.4);
+        }
+
+        .pfp-name {
+            margin-top: -1.6vh;
+        }
+
+        .pfp-name h3 {
+            width: auto;
+            text-align: center;
+            font-size: 3.3vh;
+            font-family: Hombre;
+            top: -2vh;
+            background-color: white;
+            padding: 0vh 1.5vh;
+            border-radius: 10vh;
+            box-shadow: 0 5px 1px rgb(0, 0, 0, 0.4);
+        }
+
+        .welcome-text {
+            width: 27vh;
+            height: 17vh;
+            background: rgb(255,255,255);
+            background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(244,255,253,1) 100%);
+            margin-top: 5vh;
+            border-radius: 1.5vh;
+            box-shadow: 0 5px 1px rgb(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+        }
+
+        .pfp img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .sign-btn {
+            width: 19vh;
+            height: 6vh;
+            border-radius: 10vh;
+            border: 0.3vh solid #E8CFA6;   
+            display: flex; 
+            align-items: center;    
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .sign-btn img {
+            width: 3vh;
+            height: 3vh;
+            margin: 1vh 1.2vh 1vh 1.6vh;
+        }
+
+        .sign-btn h6 {
+            font-size: 2.5vh;
+            margin-left: 1.2vh;
+        }
+
+        .sign-btn:hover {
+            background-color: #E8CFA6;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -61,7 +155,27 @@
                     <li><a id="profileButton" href="profile-main.html">ПРОФИЛЬ</a></li>
                 </ul>
             </div>
-            <button class="exit-btn"><img src="img/logout.png" alt="Exit" style="width: 6vh; height: 6vh;"></button>
+            <button class="exit-btn">Шығу</button>
+        </div>
+        
+        <div class="welcome">
+            <h2>Қош келдіңіз!</h2>
+            <div class="welcome-pfp">
+                <div class="pfp"><img src="img/pfp.png"></div>
+                <div class="pfp-name"><h3>Қонақ</h3></div>
+            </div>
+            <div class="welcome-text">
+                <button class="signin sign-btn">
+                    <img src="img/login.png" alt="">
+                    <div style="height: 3vh; border-left: 0.05vh solid #E8CFA6;"></div>
+                    <h6>Кіру</h6>
+                </button>
+                <button class="signup sign-btn">
+                    <img src="img/note.png" alt="">
+                    <div style="height: 3vh; border-left: 0.05vh solid #E8CFA6;"></div>
+                    <h6>Тіркелу</h6>
+                </button>
+            </div>
         </div>
         
         <div class="btn">
@@ -103,7 +217,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- The overlay -->
@@ -134,21 +247,29 @@
                             <div class="in-box">
                             <h3>Қалам түсі</h3></div>
                             <div class="in-box-two">
-                                <div><img src="img/pen-col.png" style="height: 5vh;"></div>
+                                <button class="pen red" style="background-color: #FF0000;"></button>
+                                <button class="pen orange" style="background-color: #FF7A00;"></button>
+                                <button class="pen yellow" style="background-color: #FAFF00;"></button>
+                                <button class="pen green" style="background-color: #00FF1A;"></button>
+                                <button class="pen skyblue" style="background-color: #00FFFF;"></button>
+                                <button class="pen blue" style="background-color: #1400FF;"></button>
+                                <button class="pen purple" style="background-color: #9E00FF;"></button>
+                                <button class="pen magenta" style="background-color: #FF008A;"></button>
                             </div>
                         </div>
                         <div class="box pen-line-box">
                             <div class="in-box">
                             <h3>Қалам қалыңдығы</h3></div>
                             <div class="in-box-two">
-                                <div><img src="img/pen-line.png" style="height: 5vh;"></div>
+                                <button class="pen"><img src="img/smalline.jpg" alt="s"></button>
+                                <button class="pen"><img src="img/midline.jpg" alt="m"></button>
+                                <button class="pen"><img src="img/fatline.jpg" alt="l"></button>
                             </div>
                         </div>
                         
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
