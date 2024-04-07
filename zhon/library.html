@@ -9,13 +9,113 @@
     <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Home Page</title>
     <style>
+        body {
+            overflow: hidden;
+        }
+
         .container {
-            background-color: beige;
+            background-color: white;
+            min-height: 100vh;
+            overflow: auto;
+        }
+
+        .container::-webkit-scrollbar {
+            height: 60vh;
+            margin-right: 1vh;
+        }
+
+        .container::-webkit-scrollbar-track {
+            background-color: red;
+            height: 60vh;
+        }
+
+        /* Styles for scrollbar thumb */
+        .container::-webkit-scrollbar-thumb {
+            background-color: green;
+            border-radius: 5vh; 
+        }
+
+        /* Styles for scrollbar buttons (arrows) */
+        .container::-webkit-scrollbar-button {
+            background-color: #ccc; /* Change the color of the buttons */
+        }
+
+        /* Styles for scrollbar corner */
+        .container::-webkit-scrollbar-corner {
+            background-color: #f1f1f1; /* Change the color of the scrollbar corner */
+        }
+
+        .label {
+            background: linear-gradient(90deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.2) 100%) border-box;
+            linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,1) 100%) border-box;
+            position: fixed;
+            margin-left: 70vh;
+            margin-top: 8vh;
         }
 
         .navbar {
-            position: relative;
+            width: 70vh;
+            position: fixed;
+            margin-left: 35vh;
+            transform: translateY(50%);
         }
+
+        .exit-btn {
+            color: grey;
+            transform: translateY(50%);
+            margin-top: 134vh;
+        }
+
+        .cards {
+/*            background-color: red;*/
+            width: 95vh;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+            margin: auto;
+            margin-top: 28vh;
+        }
+
+        .card {
+            background-color: blue;
+            width: 43vh;
+            height: 19vh;
+            border-radius: 2.7vh;
+            margin-bottom: 4vh;
+            background: linear-gradient(90deg, rgba(82,125,234,1) 0%, rgba(96,196,253,1) 100%);
+            color: white;
+
+            & button {
+                background-color: transparent;
+                border: 0.3vh solid white;
+                border-radius: 1vh;
+                font-size: 3vh;
+                color: white;
+                width: 6vh;
+                height: 6vh;
+                cursor: pointer;
+            }
+
+            & img {
+                width: 18vh;
+                float: right;
+                margin-top: -14vh;
+            }
+
+            & div {
+                display: flex;
+                flex-direction: column;
+                margin: 2vh 0 0 2vh;
+            }
+
+            & span {
+                margin-top: 2vh;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -33,7 +133,74 @@
             </div>
             <button class="exit-btn">Шығу</button>
         </div>
-        <div class="label"><h2 style="font-weight: 500; color: white;">School</h2></div>
+        <div class="label"><h2 style="color: black;">Кітапхана</h2></div>
+
+        <div class="cards">
+            <div class="card">
+                <div>
+                    <button>►</button>
+                    <span>1 деңгей</span>
+                    <h2>Математика</h2>
+                </div>
+                <img src="img/card-back.png">
+            </div>
+            <div class="card">
+                <div>
+                    <button>►</button>
+                    <span>1 деңгей</span>
+                    <h2>Математика</h2>
+                </div>
+                <img src="img/card-back.png">
+            </div>
+            <div class="card">
+                <div>
+                    <button>►</button>
+                    <span>1 деңгей</span>
+                    <h2>Математика</h2>
+                </div>
+                <img src="img/card-back.png">
+            </div>
+            <div class="card">
+                <div>
+                    <button>►</button>
+                    <span>1 деңгей</span>
+                    <h2>Математика</h2>
+                </div>
+                <img src="img/card-back.png">
+            </div>
+            <div class="card">
+                <div>
+                    <button>►</button>
+                    <span>1 деңгей</span>
+                    <h2>Математика</h2>
+                </div>
+                <img src="img/card-back.png">
+            </div>
+            <div class="card">
+                <div>
+                    <button>►</button>
+                    <span>1 деңгей</span>
+                    <h2>Математика</h2>
+                </div>
+                <img src="img/card-back.png">
+            </div>
+            <div class="card">
+                <div>
+                    <button>►</button>
+                    <span>1 деңгей</span>
+                    <h2>Математика</h2>
+                </div>
+                <img src="img/card-back.png">
+            </div>
+            <div class="card">
+                <div>
+                    <button>►</button>
+                    <span>1 деңгей</span>
+                    <h2>Математика</h2>
+                </div>
+                <img src="img/card-back.png">
+            </div>
+        </div>
 
         <!-- The overlay -->
         <div id="ins" class="overlay">
