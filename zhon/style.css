@@ -15,6 +15,10 @@ body {
     background-size: cover;
 }
 
+button {
+	cursor: pointer;
+}
+
 .container {
 	display: block;
 	width: 140vh;
@@ -196,9 +200,10 @@ body {
 
 .inst-text-box {
 	width: 65vh;
-	height: 50vh;
+	height: 45vh;
 	overflow-y: scroll;
 	text-align: start;
+	margin: 2vh;
 }
 
 .box {

@@ -20,24 +20,25 @@
         }
 
         .container::-webkit-scrollbar {
-            height: 60vh;
+            scrollbar-height: 60vh;
             margin-right: 1vh;
+            width: 2vh;
         }
 
         .container::-webkit-scrollbar-track {
-            background-color: red;
-            height: 60vh;
+            background-color: transparent;
         }
 
         /* Styles for scrollbar thumb */
         .container::-webkit-scrollbar-thumb {
-            background-color: green;
+            background-color: rgba(0, 0, 0, 0.3);
             border-radius: 5vh; 
+            border: 0.2vh #bdbdbd solid;
         }
 
         /* Styles for scrollbar buttons (arrows) */
         .container::-webkit-scrollbar-button {
-            background-color: #ccc; /* Change the color of the buttons */
+            background-color: transparent; /* Change the color of the buttons */
         }
 
         /* Styles for scrollbar corner */
@@ -45,25 +46,35 @@
             background-color: #f1f1f1; /* Change the color of the scrollbar corner */
         }
 
+        .container::-webkit-scrollbar-track-piece:end {
+            background: transparent;
+            margin-bottom: 10vh; 
+        }
+
+        .container::-webkit-scrollbar-track-piece:start {
+            background: transparent;
+            margin-top: 10vh;
+        }
+
         .label {
             background: linear-gradient(90deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.2) 100%) border-box;
             linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,1) 100%) border-box;
-            position: fixed;
+            /*position: fixed;
             margin-left: 70vh;
             margin-top: 8vh;
-        }
+*/        }
 
         .navbar {
             width: 70vh;
-            position: fixed;
+/*            position: fixed;
             margin-left: 35vh;
-            transform: translateY(50%);
+            transform: translateY(50%);*/
         }
 
         .exit-btn {
             color: grey;
-            transform: translateY(50%);
-            margin-top: 134vh;
+/*            transform: translateY(50%);*/
+/*            margin-top: 134vh;*/
         }
 
         .cards {
@@ -76,7 +87,7 @@
             flex-wrap: wrap;
             flex-direction: row;
             margin: auto;
-            margin-top: 28vh;
+            margin-top: 10vh;
         }
 
         .card {
@@ -136,22 +147,6 @@
         <div class="label"><h2 style="color: black;">Кітапхана</h2></div>
 
         <div class="cards">
-            <div class="card">
-                <div>
-                    <button>►</button>
-                    <span>1 деңгей</span>
-                    <h2>Математика</h2>
-                </div>
-                <img src="img/card-back.png">
-            </div>
-            <div class="card">
-                <div>
-                    <button>►</button>
-                    <span>1 деңгей</span>
-                    <h2>Математика</h2>
-                </div>
-                <img src="img/card-back.png">
-            </div>
             <div class="card">
                 <div>
                     <button>►</button>
