@@ -22,7 +22,8 @@ button {
 .container {
 	display: block;
 	width: 140vh;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
 	margin: auto;
 	border-right: 1vh white solid;
 	border-left: 1vh white solid;
