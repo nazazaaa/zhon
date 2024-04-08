@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кітап сөресі</title>
+    <title>Кітап</title>
     <style>
         body {
             overflow: hidden;
@@ -12,135 +12,67 @@
 
         .container {
             background-color: #FFF6E5;
-            z-index: -1000;
-            border-bottom: 0;
             overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        .container::-webkit-scrollbar {
-            scrollbar-height: 60vh;
-            margin-right: 1vh;
-            width: 2vh;
-        }
-
-        .container::-webkit-scrollbar-track {
-            background-color: transparent;
-        }
-
-        /* Styles for scrollbar thumb */
-        .container::-webkit-scrollbar-thumb {
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 5vh; 
-            border: 0.2vh #bdbdbd solid;
-        }
-
-        /* Styles for scrollbar buttons (arrows) */
-        .container::-webkit-scrollbar-button {
-            background-color: transparent; /* Change the color of the buttons */
-        }
-
-        /* Styles for scrollbar corner */
-        .container::-webkit-scrollbar-corner {
-            background-color: #f1f1f1; /* Change the color of the scrollbar corner */
-        }
-
-        .container::-webkit-scrollbar-track-piece:start {
-            background: transparent;
-            margin-top: 20vh;
-        }
-
-        .navbar {
-            position: fixed;
-            margin-left: 35vh;
-            transform: translateY(50%);
-            z-index: 1;
         }
 
         .exit-btn {
-            transform: translateY(50%);
-            margin-top: 134vh;
-            z-index: 1;
+            color: grey;
+            margin-left: 127vh;
         }
 
-        .label {
-            position: fixed;
-            margin-left: 70vh;
-            margin-top: 8vh;
-            z-index: 1;
-        }
-
-        .back-wood {
-            position: fixed;
-            width: 140vh;
-            height: 19.5vh;
-            background-image: url(img/back-wood.jpg);
-            background-size: cover;
-/*            background-position: center;*/
-            border-bottom: 0.33vh solid #826762;
-            box-shadow: 0 0 1.67vh rgb(0, 0, 0, 0.5);
-        }
-
-        .books-table {
-/*            background-color: aquamarine;*/
-            width: 130vh;
-            min-height: 20vh;
-            margin-top: 20vh;
-            padding: 2vh;
-        }
-
-        .books-row {
-            width: 130vh;
-/*            background-color: indigo;*/
-            display: flex;
-        }
-
-        .books-col-name {
-/*            background-color: burlywood;*/
-            width: 26vh;
-            min-height: 10vh;
-            margin-top: 5vh;
-            text-align: right;
-        }
-
-        .books-col {
-/*            background-color: pink;*/
-            width: 104vh;
-            display: flex;
-            justify-content: start;
-            flex-wrap: wrap;
-        }
-
-        .book {
-            background-color: white;
-            width: 23vh;
-            height: 16vh;
-            margin-left: 2.5vh;
-            margin-bottom: 4vh;
-            box-shadow: -0.2vh 0.2vh 0.5vh rgb(0, 0, 0, 0.25);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .book div {
-            background-color: #dcdcdc;
-            width: 21vh;
-            height: 10vh;
+        .b-pages {
+            width: 132vh;
+            height: auto;
             margin: auto;
-            margin-top: 1vh;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
         }
 
-        .book-name {
-            margin: 1vh;
-            position: absolute;
-            white-space: nowrap;
-            transition: transform 3.7s ease;
-            color: black;
-            text-decoration: none;
+        .b-pages img {
+            width: 100%;
+            transition: transform 0.5s ease;
         }
 
-        .book-name:hover {
-            transform: translateX(-100%);
+        .tools {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            margin: 35vh 0 0 -123vh;
+        }
+
+        .tools img {
+            width: 3vh;
+        }
+
+        .tools button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            color: white;
+            width: 5vh;
+            height: 5vh;
+            border-radius: 5vh;
+            background-color: #FC7A96;
+            border: 0;
+            margin-bottom: 1vh;
+        }
+
+        .tools a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            color: white;
+            width: 5vh;
+            height: 5vh;
+            border-radius: 5vh;
+            background-color: #FC7A96;
+            border: 0;
+            margin-bottom: 1vh;
         }
     </style>
 </head>
@@ -160,64 +92,19 @@
             <button class="exit-btn">Шығу</button>
         </div>
 
-        <div class="label"><h2 style="color: white;">Кітап сөресі</h2></div>
+        <div id="container" class="b-pages">
+            <img class="img" src="img/1сынып.1.1.png" alt="1сынып.1.1.">
+            <img class="img" src="img/1сынып.1.2.png" alt="1сынып.1.2.">
 
-        <div class="back-wood"></div>
-
-        <div class="books-table">
-            <div class="books-row">
-                <div class="books-col-name">
-                    <h2>1-сынып</h2>
-                </div>
-                <div class="books-col">
-                    <a href="book.html"><div class="book">
-                        <div style="background-image: ;"></div>
-                        <h3 class="book-name">Name of the Book</h3>
-                    </div></a>
-                    <a href="book.html"><div class="book">
-                        <div style="background-image: ;"></div>
-                        <h3 class="book-name">Name of the Book</h3>
-                    </div></a>
-                    <a href="book.html"><div class="book">
-                        <div style="background-image: ;"></div>
-                        <h3 class="book-name">Name of the Book</h3>
-                    </div></a>
-                    <a href="book.html"><div class="book">
-                        <div style="background-image: ;"></div>
-                        <h3 class="book-name">Name of the Book</h3>
-                    </div></a>
-                </div>
-            </div>
-            <div class="books-row">
-                <div class="books-col-name">
-                    <h2>1-сынып</h2>
-                </div>
-                <div class="books-col">
-                    <a href="book.html"><div class="book">
-                        <div style="background-image: ;"></div>
-                        <h3 class="book-name">Name of the Book</h3>
-                    </div></a>
-                    <a href="book.html"><div class="book">
-                        <div style="background-image: ;"></div>
-                        <h3 class="book-name">Name of the Book</h3>
-                    </div></a>
-                    <a href="book.html"><div class="book">
-                        <div style="background-image: ;"></div>
-                        <h3 class="book-name">Name of the Book</h3>
-                    </div></a>
-                    <a href="book.html"><div class="book">
-                        <div style="background-image: ;"></div>
-                        <h3 class="book-name">Name of the Book</h3>
-                    </div></a>
-                </div>
+            <div class="tools">
+                <a href="library.html"><img src="img/mini-lib.svg"></a>
+                <button onclick="enableZoom()"><img src="img/zoom-in.svg"></button>
+                <button onclick="disableZoom()"><img src="img/zoom-out.svg"></button>
             </div>
         </div>
     </div>
 
-    
-
-
-        <!-- The overlay -->
+            <!-- The overlay -->
     <div id="ins" class="overlay">
 
         <!-- Overlay content -->
@@ -325,6 +212,46 @@
     /* Close */
     function closeSet() {
         document.getElementById("set").style.display = "none";
+    }
+
+    const images = document.querySelectorAll('.img');
+
+    let zoomEnabled = false;
+
+    function enableZoom() {
+        zoomEnabled = true;
+    }
+
+    function disableZoom() {
+        zoomEnabled = false;
+        images.forEach(img => {
+            img.removeEventListener("mousemove", onMouseMove);
+            img.removeEventListener("mouseleave", onMouseLeave);
+            img.style.transformOrigin = "center";
+            img.style.transform = "scale(1)";
+        });
+    }
+
+    images.forEach(img => {
+        img.addEventListener('mouseenter', () => {
+            if (zoomEnabled) {
+                img.addEventListener("mousemove", onMouseMove);
+                img.addEventListener("mouseleave", onMouseLeave);
+            }
+        });
+    });
+
+    function onMouseMove(e) {
+        const x = e.clientX - e.target.offsetLeft;
+        const y = e.clientY - e.target.offsetTop;
+
+        e.target.style.transformOrigin = `${x}px ${y}px`;
+        e.target.style.transform = "scale(2)";
+    }
+
+    function onMouseLeave(e) {
+        e.target.style.transformOrigin = "center";
+        e.target.style.transform = "scale(1)";
     }
     </script>
 </body>
