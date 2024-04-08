@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhon</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+      body {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 20px;
+        text-align: center;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .content {
+          width: 400px;
+        }
+      }
+
+      input {
+        width: 100%;
+        margin: 5px 0;
+        padding: 6px 12px;
+        border-radius: 10px;
+        border: 1px solid black;
+      }
+
+      button {
+        margin: 10px 0;
+        width: 100%;
+        background-color: black;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 10px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h2>Тіркелу</h2>
+        <form id="registrationForm">
+          <input type="text" name="name" required placeholder="Аты"><br>
+          <input type="text" name="surname" required placeholder="Тегі"><br>
+          <input type="text" name="username" required placeholder="Пайдаланушы аты"><br>
+          <input type="password" name="password" required placeholder="Құпия сөз"><br>
+          <input type="email" name="email" required placeholder="Электрондық пошта"><br>
+          <input type="file" name="profilePhotoPin" placeholder="Суретіңізді енгізіңіз"><br>
+          <button type="submit">Тіркелу</button>
+        </form>
+        <p>Парақшаңыз бар болса <a href="login.html">Кіру</a></p>
+        <a href="home.html">Кері қайту</a>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

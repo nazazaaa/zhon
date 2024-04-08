@@ -190,27 +190,32 @@
                     <li><a id="profileButton" href="profile-main.html">ПРОФИЛЬ</a></li>
                 </ul>
             </div>
-            <button class="exit-btn">Шығу</button>
+            <button class="exit-btn" id="logout">Шығу</button>
         </div>
         
         <div class="welcome">
             <h2>Қош келдіңіз!</h2>
             <div class="welcome-pfp">
                 <div class="pfp"><img src="img/pfp.png"></div>
-                <div class="pfp-name"><h3>Қонақ</h3></div>
+                <div class="pfp-name"><h3 id="username">Қонақ</h3></div>
             </div>
             <div class="welcome-text">
-                <!-- button class="signin sign-btn">
-                    <img src="img/login.png" alt="">
-                    <div style="height: 3vh; border-left: 0.05vh solid #E8CFA6;"></div>
-                    <h6>Кіру</h6>
-                </button>
-                <button class="signup sign-btn">
-                    <img src="img/note.png" alt="">
-                    <div style="height: 3vh; border-left: 0.05vh solid #E8CFA6;"></div>
-                    <h6>Тіркелу</h6>
-                </button> -->
-                <div class="mini-lib signed">
+                <a href="login.html">
+                    <button class="signin sign-btn">
+                        <img src="img/login.png" alt="">
+                        <div style="height: 3vh; border-left: 0.05vh solid #E8CFA6;"></div>
+                        <h6>Кіру</h6>
+                    </button>
+                </a>
+                
+                <a href="registration.html">
+                    <button class="signup sign-btn">
+                        <img src="img/note.png" alt="">
+                        <div style="height: 3vh; border-left: 0.05vh solid #E8CFA6;"></div>
+                        <h6>Тіркелу</h6>
+                    </button>
+                </a>
+                <!-- <div class="mini-lib signed">
                     <button><img src="img/mini-lib.svg" alt="lib-logo"></button>
                     <a>Оқу</a>
                 </div>
@@ -220,7 +225,7 @@
                 <div class="mini-prof signed">
                     <button><img src="img/mini-prof.svg" alt="lib-logo"></button>
                     <a>Профиль</a>
-                </div>
+                </div> -->
             </div>
         </div>
         
@@ -340,5 +345,7 @@
         document.getElementById("set").style.display = "none";
     }
     </script>
+
+    <script src="app.js"></script>
 </body>
 </html>
