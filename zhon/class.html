@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classroom</title>
+    <title>Сабақ</title>
     <style>
         body {
             overflow: hidden;
@@ -16,8 +16,8 @@
         }
 
         .tools {
-            width: 50px;
-            height: 120px;
+            width: 6.25vh;
+            height: 15vh;
             background-color: pink;
             float: left;
             margin-top: 10%;
@@ -29,9 +29,9 @@
             box-shadow: 0.8vh 0.8vh 0.1vh rgb(0, 0, 0, 0.4);
         }
 
-        .tools a {
-            text-decoration: none;
-            cursor: pointer;
+        .tools button {
+            background-color: transparent;
+            border: none;
         }
 
         .tools img {
@@ -43,8 +43,8 @@
             width: 114vh;
             height: 60vh;
             background-color: white;
-            margin-left: 9.5vh;
-            margin-top: 5vh;
+            margin-left: 9vh;
+            margin-top: 9vh;
             position: fixed;
             overflow-y: scroll;
             padding: 4vh;
@@ -155,8 +155,8 @@
         }
 
         .ins-open {
-            width: 45px;
-            height: 50px;
+            width: 6.25vh;
+            height: 6.95vh;
             background-color: pink;
             float: right;
             margin-top: 10%;
@@ -171,6 +171,14 @@
         .ins-open button {
             border: 0;
             background-color: transparent;
+        }
+
+        canvas {
+            width: 122vh;
+            height: 63vh;
+            position: fixed;
+            margin-top: -7vh;
+            margin-left: -4vh;
         }
     </style>
 </head>
@@ -204,14 +212,15 @@
         </div>
 
         <div class="tools">
-            <a><img src="img/pencil.png"></a>
-            <a><img src="img/eraser.png"></a>
+            <button id="pencil" onclick="init()"><img src="img/pencil.png"></button>
+            <button value="erase" id="clr" onclick="erase()"><img src="img/eraser.png"></button>
         </div>
 
         <div class="board">
             <p class="brd-task-text"></p>
             <div class="brd-task">
             </div>
+            <canvas id="can" width="870" height="450"></canvas>
 
             <div class="brd-tools">
                 <button style="margin-left: 17vh;">↺</button>
@@ -220,21 +229,22 @@
                 <button id="submit">Тапсыру</button>
             </div>
         </div>
+        
 
         <div class="ins-open">
             <button style="font-family: Hombre; font-size: 5.5vh;" onclick="openClsIns()">i</button>
         </div>
 
-        <div id="cls-ins" class=" overlay">
+        <div id="cls-ins" class="overlay">
             <div class="overlay-content">
                 <div class="outer-ins">
                     <div><a href="javascript:void(0)" class="closebtn" onclick="closeClsIns()" style="font-family: Chelsea+Market;">&times;</a></div>
                     <div class="inner-ins">
                         <h2 style="font-size: 5vh; font-family: Hombre;">? Көмек</h2>
                         <div class="bubble">
-                            <p style="font-size: 4vh; font-family: Hombre;">Қош келдіңіз!</p>
+                            <p style="font-size: 4vh; font-family: Hombre;">Түсіндіріп берейін</p>
                         </div>
-                        <img src="img/girl.jpg" alt="girl" style="width: 17vh; height: 17vh;">
+                        <img src="img/student1.png" alt="girl" style="width: 17vh; height: 17vh;">
                         <div class="inst-text-box">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lectus risus, finibus ornare vestibulum et, feugiat quis dui. Vivamus sit amet dolor et magna facilisis rhoncus. 
@@ -326,23 +336,23 @@
                             <div class="in-box">
                             <h3>Қалам түсі</h3></div>
                             <div class="in-box-two">
-                                <button class="pen red" style="background-color: #FF0000;"></button>
-                                <button class="pen orange" style="background-color: #FF7A00;"></button>
-                                <button class="pen yellow" style="background-color: #FAFF00;"></button>
-                                <button class="pen green" style="background-color: #00FF1A;"></button>
-                                <button class="pen skyblue" style="background-color: #00FFFF;"></button>
-                                <button class="pen blue" style="background-color: #1400FF;"></button>
-                                <button class="pen purple" style="background-color: #9E00FF;"></button>
-                                <button class="pen magenta" style="background-color: #FF008A;"></button>
+                                <button class="pen red" style="background-color: #FF0000;" id="red" onclick="color(this)"></button>
+                                <button class="pen orange" style="background-color: #FF7A00;" id="orange" onclick="color(this)"></button>
+                                <button class="pen yellow" style="background-color: #FAFF00;" id="yellow" onclick="color(this)"></button>
+                                <button class="pen green" style="background-color: #00FF1A;" id="green" onclick="color(this)"></button>
+                                <button class="pen skyblue" style="background-color: #00FFFF;" id="lightblue" onclick="color(this)"></button>
+                                <button class="pen blue" style="background-color: #1400FF;" id="blue" onclick="color(this)"></button>
+                                <button class="pen purple" style="background-color: #9E00FF;" id="purple" onclick="color(this)"></button>
+                                <button class="pen magenta" style="background-color: #FF008A;" id="pink" onclick="color(this)"></button>
                             </div>
                         </div>
                         <div class="box pen-line-box">
                             <div class="in-box">
                             <h3>Қалам қалыңдығы</h3></div>
                             <div class="in-box-two">
-                                <button class="pen"><img src="img/smalline.jpg" alt="s"></button>
-                                <button class="pen"><img src="img/midline.jpg" alt="m"></button>
-                                <button class="pen"><img src="img/fatline.jpg" alt="l"></button>
+                                <button class="pen"><img src="img/smalline.jpg" alt="s" id="two" onclick="line(this)"></button>
+                                <button class="pen"><img src="img/midline.jpg" alt="m" id="three" onclick="line(this)"></button>
+                                <button class="pen"><img src="img/fatline.jpg" alt="l" id="four" onclick="line(this)"></button>
                             </div>
                         </div>
                         
@@ -382,7 +392,7 @@
     //     overlay.style.display = "block";
     // });
 
-     document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function() {
         var links = document.querySelectorAll('.lbl-nums a');
         links.forEach(function(link, index) {
             link.addEventListener('click', function(event) {
@@ -396,6 +406,108 @@
             });
         });
     });
+
+    var canvas, ctx, flag = false,
+        prevX = 0,
+        currX = 0,
+        prevY = 0,
+        currY = 0,
+        dot_flag = false;
+
+    var selectedColor = "black";
+    var selectedLineWidth = 2;
+    var pencilActive = false;
+
+    function init() {
+        if (pencilActive) {
+            canvas.removeEventListener("mousemove", findxy);
+            canvas.removeEventListener("mousedown", findxy);
+            canvas.removeEventListener("mouseup", findxy);
+            canvas.removeEventListener("mouseout", findxy);
+            pencilActive = false;
+        } else {
+            canvas = document.getElementById('can');
+            ctx = canvas.getContext("2d");
+            w = canvas.width;
+            h = canvas.height;
+            ctx.lineCap = "round"
+
+            canvas.addEventListener("mousemove", findxy);
+            canvas.addEventListener("mousedown", findxy);
+            canvas.addEventListener("mouseup", findxy);
+            canvas.addEventListener("mouseout", findxy);
+            pencilActive = true;
+        }
+    }
+
+    function color(obj) {
+        selectedColor = obj.style.backgroundColor;
+    }
+
+    function line(obj) {
+        switch (obj.id) {
+            case "two":
+                selectedLineWidth = 2;
+                break;
+            case "three":
+                selectedLineWidth = 6;
+                break;
+            case "four":
+                selectedLineWidth = 10;
+                break;
+        }
+    }
+
+    function draw() {
+        ctx.beginPath();
+        ctx.moveTo(prevX, prevY);
+        ctx.lineTo(currX, currY);
+        ctx.strokeStyle = selectedColor;
+        ctx.lineWidth = selectedLineWidth;
+        ctx.stroke();
+        ctx.closePath();
+    }
+
+    function erase() {
+        var m = confirm("Суретті өшіргіңіз келеді ме?");
+        if (m) {
+            ctx.clearRect(0, 0, w, h);
+            document.getElementById("canvasimg").style.display = "none";
+        }
+    }
+
+    function findxy(e) {
+        if (e.type == 'mousedown') {
+            prevX = currX;
+            prevY = currY;
+            currX = e.clientX - canvas.getBoundingClientRect().left;
+            currY = e.clientY - canvas.getBoundingClientRect().top;
+
+            flag = true;
+            dot_flag = true;
+            if (dot_flag) {
+                ctx.beginPath();
+                ctx.fillStyle = selectedColor;
+                ctx.fillRect(currX, currY, 2, 2);
+                ctx.closePath();
+                dot_flag = false;
+            }
+        }
+        if (e.type == 'mouseup' || e.type == "mouseout") {
+            flag = false;
+        }
+        if (e.type == 'mousemove') {
+            if (flag) {
+                prevX = currX;
+                prevY = currY;
+                currX = e.clientX - canvas.getBoundingClientRect().left;
+                currY = e.clientY - canvas.getBoundingClientRect().top;
+                draw();
+            }
+        }
+    }
+
+
     </script>
 </body>
 </html>
