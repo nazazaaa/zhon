@@ -4,12 +4,12 @@
 	<meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>School</title>
+	<title>Мектеп</title>
     <style>
         .container {
-            /*background-image: url('img/school-back.jpg');
+            background-image: url('img/school-back.jpg');
             background-size: cover;
-            background-position: center;*/
+            background-position: center;
             background-color: white;
         }
 
@@ -24,150 +24,14 @@
             justify-items: center;
         }
 
-        .label {
-            background: linear-gradient(90deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.2) 100%) border-box;
-            linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,1) 100%) border-box;
-            position: fixed;
-            margin-left: 70vh;
-            margin-top: 8vh;
-        }
-
         .navbar {
             width: 70vh;
-            position: fixed;
-            margin-left: 35vh;
-            transform: translateY(50%);
         }
 
-        .exit-btn {
-            color: grey;
-            transform: translateY(50%);
-            margin-top: 134vh;
-        }
-
-        main#carousel {
-          grid-row: 1 / 2;
-          grid-column: 1 / 8;
-          width: 140vh;
-          height: 500px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-          transform-style: preserve-3d;
-          perspective: 600px;
-          --items: 5;
-          --middle: 3;
-          --position: 1;
-          pointer-events: none;
-        }
-
-        .item {
-          position: absolute;
-          width: 300px;
-          height: 400px;
-          background-color: coral;
-          --r: calc(var(--position) - var(--offset));
-          --abs: max(calc(var(--r) * -1), var(--r));
-          transition: all 0.25s linear;
-          transform: rotateY(calc(-10deg * var(--r)))
-            translateX(calc(-300px * var(--r)));
-          z-index: calc((var(--position) - var(--abs)));
-        }
-
-        .item:nth-of-type(1) {
-          --offset: 1;
-          background-color: #97C1A9;
-        }
-
-        .item:nth-of-type(2) {
-          --offset: 2;
-          background-color: #B7CFB7;
-        }
-
-        .item:nth-of-type(3) {
-          --offset: 3;
-          background-color: #CCE2CB;
-        }
-        div.item:nth-of-type(4) {
-          --offset: 4;
-          background-color: #C7DBDA;
-        }
-        div.item:nth-of-type(5) {
-          --offset: 5;
-          background-color: #FFE1E9;
-        }
-        div.item:nth-of-type(6) {
-          --offset: 5;
-          background-color: #E3F1CD;
-        }
-        div.item:nth-of-type(7) {
-          --offset: 5;
-          background-color: #55CBCD;
-        }
-        div.item:nth-of-type(8) {
-          --offset: 5;
-          background-color: #A3E1DC;
-        }
-        div.item:nth-of-type(9) {
-          --offset: 5;
-          background-color: #9AB8D4;
-        }
-        div.item:nth-of-type(10) {
-          --offset: 5;
-          background-color: #F6D4D5;
-        }
-        div.item:nth-of-type(11) {
-          --offset: 5;
-          background-color: #DFCEF2;
-        }
-
-        input:nth-of-type(1) {
-          grid-column: 2 / 3;
-          grid-row: 2 / 3;
-        }
-        input:nth-of-type(1):checked ~ main#carousel {
-          --position: 1;
-        }
-
-        input:nth-of-type(2) {
-          grid-column: 3 / 4;
-          grid-row: 2 / 3;
-        }
-        input:nth-of-type(2):checked ~ main#carousel {
-          --position: 2;
-        }
-
-        input:nth-of-type(3) {
-          grid-column: 4 /5;
-          grid-row: 2 / 3;
-        }
-        input:nth-of-type(3):checked ~ main#carousel {
-          --position: 3;
-        }
-
-        input:nth-of-type(4) {
-          grid-column: 5 / 6;
-          grid-row: 2 / 3;
-        }
-        input:nth-of-type(4):checked ~ main#carousel {
-          --position: 4;
-        }
-
-        input:nth-of-type(5) {
-          grid-column: 6 / 7;
-          grid-row: 2 / 3;
-        }
-        input:nth-of-type(5):checked ~ main#carousel {
-          --position: 5;
-        }
-
-
-
-/*        .wall {
+        .wall {
             width: 65vh;
             height: 81.5vh;
-            margin: auto;   
+            margin: auto;  
         }
 
         .name-box {
@@ -178,7 +42,7 @@
         }
 
         .name {
-            width: 30.5%;
+            width: auto;
             height: 33%;
             background-image: url(img/name.png);
             background-size: cover;
@@ -191,6 +55,8 @@
 
         .name h3 {
             color: rgba(0, 0, 0, 0.7);
+            margin: 0 1vh 0 1vh;
+            text-decoration: none;
         }
 
         .doors {
@@ -230,7 +96,7 @@
         .door:hover {
             opacity: 30%;
             cursor: pointer;
-        }*/
+        }
     </style>
 </head>
 <body>
@@ -249,41 +115,25 @@
             <button class="exit-btn">Шығу</button>
         </div>
         
-        <div class="label"><h2 style="font-weight: 500; color: black;">Мектеп</h2></div>
+        <div class="label"><h2 style="font-weight: 500; color: white;">Мектеп</h2></div>
 
-        <div class="classes">
-
-            <!-- Мынаны тоже форга салу керек чтобы количестов совпадало -->
-            <input type="radio" name="position" checked />
-            <input type="radio" name="position" />
-            <input type="radio" name="position" />
-            <input type="radio" name="position" />
-            <input type="radio" name="position" />
-            <main id="carousel">
-                <div class="item" ><button href="school.html"> Сынып</button></div>
-                <div class="item"></div>
-                <div class="item"></div>
-                <div class="item"></div>
-                <div class="item"></div>
-            <main> 
-        </div>
-    </div>
-
-<!--         <div class="wall">
-            <div class="name-box">
-                <div class="name"><h3 style="font-weight: 500;">Math</h3></div>
-            </div>
+        <div class="wall">
+            <a id="current-class"><div class="name-box">
+                <div class="name"><h3 id="classname" style="font-weight: 500;">Математика</h3></div>
+            </div></a>
             <div class="doors">
-                <button class="prev nav-btn">
+                <button id="left-class" class="prev nav-btn">
                     <span>◄</span>
                 </button>
                 <button class="door" onclick="window.location.href='classroom.html';">
                 </button>
-                <button class="next nav-btn">
+                <button id="right-class" class="next nav-btn">
                     <span>►</span>
                 </button>
             </div>
-        </div> -->
+        </div>
+   </div>
+
 
         <!-- The overlay -->
         <div id="ins" class="overlay">
@@ -375,25 +225,49 @@
         </div>
 
     <script>
-    /* Open */
-    function openIns() {
-        document.getElementById("ins").style.display = "block";
-    }
+        let clas = 0;
+        const classes = ["Математика", "Орыс тілі", "Қазақ тілі", "Логика", "Ағылшын тілі"];
+        const classs = document.getElementById("classname");
 
-    /* Close */
-    function closeIns() {
-        document.getElementById("ins").style.display = "none";
-    }
+        // Function to update the class name
+        function updateClassName(direction) {
+            if (direction === 'right') {
+                clas = (clas + 1) % classes.length;
+            } else if (direction === 'left') {
+                clas = (clas - 1 + classes.length) % classes.length;
+            }
+            classs.textContent = classes[clas];
+        }
 
-    /* Open */
-    function openSet() {
-        document.getElementById("set").style.display = "block";
-    }
+        // Event listener for right button
+        document.getElementById("right-class").addEventListener("click", function() {
+            updateClassName('right');
+        });
 
-    /* Close */
-    function closeSet() {
-        document.getElementById("set").style.display = "none";
-    }
+        // Event listener for left button
+        document.getElementById("left-class").addEventListener("click", function() {
+            updateClassName('left');
+        });
+
+        /* Open */
+        function openIns() {
+            document.getElementById("ins").style.display = "block";
+        }
+
+        /* Close */
+        function closeIns() {
+            document.getElementById("ins").style.display = "none";
+        }
+
+        /* Open */
+        function openSet() {
+            document.getElementById("set").style.display = "block";
+        }
+
+        /* Close */
+        function closeSet() {
+            document.getElementById("set").style.display = "none";
+        }
     </script>
 </body>
 </html>
